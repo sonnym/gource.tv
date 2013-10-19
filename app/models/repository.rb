@@ -24,6 +24,10 @@ class Repository < ActiveRecord::Base
     Rugged::Repository.clone_at(url, path)
   end
 
+  def remove_from_filesystem
+    FileUtils.rm_r(path)
+  end
+
   def fs_name
     "#{account}-#{name}"
   end
