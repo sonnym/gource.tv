@@ -11,6 +11,15 @@ h1, h2 {
   margin: 0;
 }
 
+h1 {
+  padding-bottom: 10px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
 #container {
   position: fixed;
 
