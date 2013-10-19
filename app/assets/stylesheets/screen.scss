@@ -25,16 +25,14 @@ a {
 }
 
 #container {
-  position: fixed;
-
-  width: 100%;
+  width: 90%;
   height: 100%;
 
   margin: 10px;
 
   z-index: -10;
 
-  div {
+  #repositories, #repository {
     float: left;
   }
 }
