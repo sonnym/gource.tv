@@ -16,8 +16,8 @@ class ProcessQueue
     end
   end
 
-  def self.perform(repository)
-    self.new(repository).process!
+  def self.perform(repository_hash)
+    self.new(Repository.find(repository_hash['id'])).process!
   end
 
   private
