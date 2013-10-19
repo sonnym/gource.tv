@@ -22,6 +22,7 @@ gem 'js-routes'
 
 group :development do
   gem 'capistrano', '~> 2.15'
+  gem 'capistrano-resque'
 end
 
 group :development, :test do
