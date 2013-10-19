@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019014010) do
+ActiveRecord::Schema.define(version: 20131019131845) do
+
+  create_table "process_logs", force: true do |t|
+    t.text     "body",       null: false
+    t.datetime "started_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "repositories", force: true do |t|
     t.string   "account",    null: false
