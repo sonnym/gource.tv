@@ -4,6 +4,8 @@ class Repository < ActiveRecord::Base
   validate :name, :account, presence: true, format: { with: /\A[\w-]+\z/ }
   validate :name, uniqueness: true, scope: :account
 
+  after_create :process_video
+
   def as_json(opts = {})
     super(opts.merge({ methods: %i(web_url process_log) }))
   end
@@ -39,5 +41,11 @@ class Repository < ActiveRecord::Base
 
   def log_path
     File.join(REPOSITORY_DIRECTORY, "#{fs_name}.log")
+  end
+
+  private
+
+  def process_video
+    ProcessQueue.perform(self)
   end
 end
