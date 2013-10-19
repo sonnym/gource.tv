@@ -31,6 +31,9 @@
       <div id="data" ng-show="repository">
         <h2>{{repository.account}}/{{repository.name}}</h2>
         <a href="{{repository.web_url}}" target="new">github</a>
+        <div ng-show="repository.youtube_id" ng-cloak>
+          <iframe class="" id="" type="text/html" width="640" height="360" src="http://www.youtube.com/embed/{{repository.youtube_id}}?rel=0&vq=hd720" frameborder="0"></iframe>
+        </div>
       </div>
     </div>
   </div>
