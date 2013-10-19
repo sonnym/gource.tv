@@ -33,4 +33,6 @@ Gourcetv::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  config.assets.initialize_on_precompile = true
 end

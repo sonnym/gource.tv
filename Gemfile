@@ -18,6 +18,7 @@ gem 'peek-resque'
 # assets
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'js-routes'
 
 group :development do
   gem 'capistrano', '~> 2.15'
