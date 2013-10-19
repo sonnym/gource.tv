@@ -14,11 +14,14 @@
 ActiveRecord::Schema.define(version: 20131019131845) do
 
   create_table "process_logs", force: true do |t|
-    t.text     "body",       null: false
-    t.datetime "started_at", null: false
+    t.integer  "repository_id", null: false
+    t.text     "body",          null: false
+    t.datetime "started_at",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "process_logs", ["repository_id"], name: "process_logs_repository_id_fk", using: :btree
 
   create_table "repositories", force: true do |t|
     t.string   "account",    null: false
@@ -26,5 +29,7 @@ ActiveRecord::Schema.define(version: 20131019131845) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_foreign_key "process_logs", "repositories", :name => "process_logs_repository_id_fk"
 
 end
