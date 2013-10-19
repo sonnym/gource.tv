@@ -24,11 +24,11 @@
     </div>
 
     <div id="repository" ng-controller="RepositoryShowCtrl">
-      <div id="intro" ng-hide="repository">
+      <div ng-hide="repository">
         <a href="https://news.ycombinator.com/item?id=4992717" target="new">the impetus</a>
       </div>
 
-      <div id="data" ng-show="repository">
+      <div ng-show="repository">
         <h2>{{repository.account}}/{{repository.name}}</h2>
         <a href="{{repository.web_url}}" target="new">github</a>
         <div ng-show="repository.youtube_id" ng-cloak>
