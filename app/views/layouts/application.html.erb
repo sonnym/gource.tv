@@ -11,7 +11,11 @@
 </head>
 <body>
   <div id="container" ng-app="gource_tv">
-    <h1>GourceTV</h1>
+    <div id="header">
+      <h1>GourceTV</h1>
+      <div id="status" ng-controller="SystemStatusCtrl"></div>
+    </div>
+
     <div id="repositories" ng-controller="RepositoryIndexCtrl">
       <a href="#" ng-click="showAddRepositoryForm()">add repository</a>
       <p>

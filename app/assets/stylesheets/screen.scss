@@ -13,6 +13,7 @@ h1, h2 {
 
 h1 {
   padding-bottom: 10px;
+  float: left;
 }
 
 ul {
@@ -29,10 +30,28 @@ a {
   height: 100%;
 
   margin: 10px;
+}
 
-  #repositories, #repository {
-    float: left;
+#header {
+  height: 60px;
+  clear: both;
+}
+
+#status {
+  float: right;
+  margin-top: 10px;
+}
+
+#peek {
+  display: inline;
+
+  div {
+    display: inline;
   }
+}
+
+#repositories, #repository {
+  float: left;
 }
 
 #repositories {

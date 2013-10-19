@@ -68,3 +68,15 @@ function RepositoryShowCtrl($scope, $rootScope, Repository) {
   });
 }
 RepositoryShowCtrl.$inject = ["$scope", "$rootScope", "Repository"];
+
+function SystemStatusCtrl($scope, $http) {
+  function updateStatus() {
+    $http.get(Routes.status_path()).success(function(data) {
+      angular.element(document.querySelector("#status")).html(data);
+      setTimeout(updateStatus, 5000);
+    });
+  }
+
+  updateStatus();
+}
+SystemStatusCtrl.$inject = ["$scope", "$http"];

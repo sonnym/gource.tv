@@ -1,0 +1,5 @@
+| load: <%= @system_status.load_avgs.join(' ') %>
+| mem: <%= @system_status.mem.join(' / ') %>
+| swap: <%= @system_status.swap.join(' / ') %>
+| <%= render('peek/bar') %>
+|
