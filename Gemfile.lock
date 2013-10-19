@@ -83,12 +83,6 @@ GEM
       multi_json (~> 1.0)
       multi_xml (~> 0.5)
       rack (~> 1.2)
-    peek (0.1.7)
-      atomic (>= 1.0.0)
-      rails (>= 3.0.0)
-    peek-resque (2.0.1)
-      peek (>= 0.1.0)
-      resque
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -180,8 +174,6 @@ DEPENDENCIES
   foreigner
   js-routes
   mysql2
-  peek
-  peek-resque
   pry
   rails (= 4.0.0)
   resque

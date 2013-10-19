@@ -14,10 +14,6 @@ gem 'youtube_it'
 # jobs
 gem 'resque'
 
-# monitor
-gem 'peek'
-gem 'peek-resque'
-
 # assets
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
