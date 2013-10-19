@@ -4,12 +4,16 @@ class Repository < ActiveRecord::Base
   validate :name, :account, presence: true, format: { with: /\A[\w-]+\z/ }
   validate :name, uniqueness: true, scope: :account
 
+  def as_json(opts = {})
+    super(opts.merge({ methods: %i(web_url) }))
+  end
+
   def url
     "git://github.com/#{account}/#{name}.git"
   end
 
   def web_url
-    "https://github.com/#{account}/#{name}.git"
+    "https://github.com/#{account}/#{name}"
   end
 
   def path
