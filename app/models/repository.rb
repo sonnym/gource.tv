@@ -21,6 +21,7 @@ class Repository < ActiveRecord::Base
   end
 
   def clone_from_github
+    FileUtils.mkdir_p(REPOSITORY_DIRECTORY) unless Dir.exists?(REPOSITORY_DIRECTORY)
     Rugged::Repository.clone_at(url, path)
   end
 
