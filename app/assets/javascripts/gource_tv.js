@@ -53,6 +53,10 @@ function RepositoryCreateCtrl($scope, $rootScope, Repository) {
       $rootScope.$broadcast("repositories:refresh");
     });
   }
+
+  $scope.cancel = function() {
+    $rootScope.$broadcast("repository:modal:close");
+  }
 }
 RepositoryCreateCtrl.$inject = ["$scope", "$rootScope", "Repository"];
 
