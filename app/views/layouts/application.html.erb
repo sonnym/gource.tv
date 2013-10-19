@@ -15,13 +15,19 @@
       <a href="#" ng-click="showAddRepositoryForm()">add repository</a>
       <ul>
         <li ng-repeat="repository in repositories" ng-cloak>
-          {{repository.account}}/{{repository.name}}
+          <a href="#" ng-click="showRepository(repository.id)">{{repository.account}}/{{repository.name}}</a>
         </li>
       </ul>
     </div>
 
     <div id="repository" ng-controller="RepositoryShowCtrl">
-      <a href="https://news.ycombinator.com/item?id=4992717" target="new">the impetus</a>
+      <div id="intro" ng-hide="repository">
+        <a href="https://news.ycombinator.com/item?id=4992717" target="new">the impetus</a>
+      </div>
+
+      <div id="data" ng-show="repository">
+        <h2>{{repository.account}}/{{repository.name}}</h2>
+      </div>
     </div>
   </div>
 </body>

@@ -13,6 +13,10 @@ class RepositoriesController < ApplicationController
     end
   end
 
+  def show
+    render(json: Repository.find(params[:id]))
+  end
+
   private
 
   def repository_params

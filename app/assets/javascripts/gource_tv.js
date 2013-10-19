@@ -6,7 +6,7 @@ repository.factory("Repository", ["$resource", function($resource) {
   var resources = $resource(Routes.repositories_path());
   var resource = $resource(Routes.repository_path(":id"));
 
-  return { query: resources.query, create: resources.save, show: resource.get };
+  return { query: resources.query, create: resources.save, get: resource.get };
 }]);
 
 function RepositoryIndexCtrl($scope, $rootScope, $modal, Repository) {
@@ -19,6 +19,10 @@ function RepositoryIndexCtrl($scope, $rootScope, $modal, Repository) {
       templateUrl: "template/new_repository_form.html",
       controller: RepositoryCreateCtrl
     }); 
+  }
+
+  $scope.showRepository = function(id) {
+    $rootScope.$broadcast("repository:show", id);
   }
 
   $rootScope.$on("repository:modal:close", function() {
@@ -43,5 +47,11 @@ function RepositoryCreateCtrl($scope, $rootScope, Repository) {
 }
 RepositoryCreateCtrl.$inject = ["$scope", "$rootScope", "Repository"];
 
-function RepositoryShowCtrl() {
+function RepositoryShowCtrl($scope, $rootScope, Repository) {
+  $rootScope.$on("repository:show", function(e, id) {
+    Repository.get({ id: id }, function(repository) {
+      $scope.repository = repository;
+    });
+  });
 }
+RepositoryCreateCtrl.$inject = ["$scope", "$rootScope", "Repository"];
