@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gourcetv</title>
+  <title>GourceTV</title>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap.min.js"></script>
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application' %>
 </head>
 <body>
+  <div id="container" ng-app="gource_tv">
+    <h1>GourceTV</h1>
+    <div id="repositories" ng-controller="RepositoryIndexCtrl">
+      <a href="#" ng-click="showAddRepositoryForm()">add repository</a>
+      <ul>
+        <li ng-repeat="repository in repositories" ng-cloak>
+          {{repository.account}}/{{repository.name}}
+        </li>
+      </ul>
+    </div>
 
-<%= yield %>
-
+    <div id="repository" ng-controller="RepositoryShowCtrl">
+      <a href="https://news.ycombinator.com/item?id=4992717" target="new">the impetus</a>
+    </div>
+  </div>
 </body>
 </html>

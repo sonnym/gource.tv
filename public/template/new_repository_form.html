@@ -1,0 +1,22 @@
+<div id="new_repository">
+  <form name="new_repository_form" ng-submit="save()" novalidate>
+    <p>
+      <label for="account">account</label>
+      <br>
+      <input type="text" id="account" name="account" ng-model="account" required />
+      <br>
+      <span ng-show="new_repository_form.account.$dirty && new_repository_form.account.$error.required">account is required</span>
+    </p>
+    <p>
+      <label for="name">name</label>
+      <br>
+      <input type="text" id="name" name="name" ng-model="name" required />
+      <br>
+      <span ng-show="new_repository_form.name.$dirty && new_repository_form.name.$error.required">name is required</span>
+    </p>
+    <p>
+      https://github.com/{{account}}<span ng-show="account.length > 0 && name.length > 0">/{{name}}.git</span>
+    </p>
+    <p><input type="submit" value="create" /></p>
+  </form>
+</div>
