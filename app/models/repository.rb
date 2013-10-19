@@ -46,6 +46,6 @@ class Repository < ActiveRecord::Base
   private
 
   def process_video
-    ProcessQueue.perform(self)
+    Resque.enqueue(ProcessQueue, self)
   end
 end
