@@ -2,7 +2,10 @@ source 'https://rubygems.org'
 
 # core
 gem 'rails', '4.0.0'
+
+# database
 gem 'mysql2'
+gem 'foreigner'
 
 # integration
 gem 'rugged'

@@ -47,6 +47,8 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    foreigner (1.4.2)
+      activerecord (>= 3.0.0)
     highline (1.6.20)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -183,6 +185,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano (~> 2.15)
   capistrano-resque
+  foreigner
   js-routes
   mysql2
   peek
