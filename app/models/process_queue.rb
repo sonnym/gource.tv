@@ -9,7 +9,8 @@ class ProcessQueue
     with_log do
       with_repository do
         with_video do
-          VideoUploader.new(@repository).upload!
+          response = VideoUploader.new(@repository).upload!
+          @repository.update_attribute(:youtube_id, response.unique_id)
         end
       end
     end
