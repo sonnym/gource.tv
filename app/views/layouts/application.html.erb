@@ -13,8 +13,11 @@
     <h1>GourceTV</h1>
     <div id="repositories" ng-controller="RepositoryIndexCtrl">
       <a href="#" ng-click="showAddRepositoryForm()">add repository</a>
+      <br>
+      <input type="test" placeholder="search" ng-model="searchRaw" ng-change="setSearchString()" />
+      <br>
       <ul>
-        <li ng-repeat="repository in repositories" ng-cloak>
+        <li ng-repeat="repository in repositories | filter:{ '$': searchString } | limitTo: 50" ng-cloak>
           <a href="#" ng-click="showRepository(repository.id)">{{repository.account}}/{{repository.name}}</a>
         </li>
       </ul>

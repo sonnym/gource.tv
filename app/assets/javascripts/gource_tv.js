@@ -21,6 +21,15 @@ function RepositoryIndexCtrl($scope, $rootScope, $modal, Repository) {
     }); 
   }
 
+  $scope.setSearchString = function() {
+    if ($scope.searchRaw && $scope.searchRaw.length > 0) {
+      $scope.searchString = $scope.searchRaw;
+    } else {
+      $scope.searchString = '';
+    }
+  }
+  $scope.setSearchString();
+
   $scope.showRepository = function(id) {
     $rootScope.$broadcast("repository:show", id);
   }
