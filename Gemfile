@@ -12,7 +12,7 @@ gem 'rugged'
 gem 'youtube_it'
 
 # jobs
-gem 'resque'
+gem 'resque', git: 'git@github.com:sonnym/resque.git', branch: 'remove_eager_loading'
 
 # assets
 gem 'sass-rails', '~> 4.0.0'
@@ -21,7 +21,7 @@ gem 'js-routes'
 
 group :development do
   gem 'capistrano', '~> 2.15'
-  gem 'capistrano-resque', git: 'git@github.com:sonnym/capistrano-resque.git', branch: :redirect_output
+  gem 'capistrano-resque', '0.0.7'
 end
 
 group :development, :test do
