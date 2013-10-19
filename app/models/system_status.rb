@@ -1,6 +1,6 @@
 class SystemStatus
   def self.get
-    OpenStruct.new({ load_avgs: load_avgs, mem: mem, swap: swap })
+    { load_avgs: load_avgs, mem: mem, swap: swap }
   end
 
   private

@@ -13,7 +13,12 @@
   <div id="container" ng-app="gource_tv">
     <div id="header">
       <h1>GourceTV</h1>
-      <div id="status" ng-controller="SystemStatusCtrl"></div>
+      <div id="status" ng-controller="SystemStatusCtrl" ng-show="status">
+        | load: {{status.load_avgs.join(' ')}}
+        | mem: {{status.mem.join(' / ')}}
+        | swap: {{status.swap.join(' / ')}}
+        |
+      </div>
     </div>
 
     <div id="repositories" ng-controller="RepositoryIndexCtrl">
