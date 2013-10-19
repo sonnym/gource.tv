@@ -4,6 +4,8 @@ class ProcessQueue
   def self.perform(repository)
     log = ProcessLog.new(repository: repository, started_at: DateTime.now)
 
+    repository.clone_from_github
+
     GourceRunner.new(repository).run!
     VideoUploader.new(repository).upload!
 
