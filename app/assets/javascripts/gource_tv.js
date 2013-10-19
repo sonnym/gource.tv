@@ -67,4 +67,4 @@ function RepositoryShowCtrl($scope, $rootScope, Repository) {
     });
   });
 }
-RepositoryCreateCtrl.$inject = ["$scope", "$rootScope", "Repository"];
+RepositoryShowCtrl.$inject = ["$scope", "$rootScope", "Repository"];
