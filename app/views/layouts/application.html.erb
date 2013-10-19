@@ -36,6 +36,22 @@
         <div ng-show="repository.youtube_id" ng-cloak>
           <iframe class="" id="" type="text/html" width="640" height="360" src="http://www.youtube.com/embed/{{repository.youtube_id}}?rel=0&vq=hd720" frameborder="0"></iframe>
         </div>
+
+        <div id="log">
+          <accordion>
+            <accordion-group>
+              <accordion-heading>
+                Log
+              </accordion-heading>
+
+              Start Time: {{repository.process_log.started_at}}
+              <br>
+              End Time: {{repository.process_log.created_at}}
+              <br>
+              Terminal Output: <pre>{{repository.process_log.body}}</pre>
+            </accordion-group>
+          </accordian>
+        </div>
       </div>
     </div>
   </div>

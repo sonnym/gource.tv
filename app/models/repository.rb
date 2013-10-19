@@ -5,7 +5,7 @@ class Repository < ActiveRecord::Base
   validate :name, uniqueness: true, scope: :account
 
   def as_json(opts = {})
-    super(opts.merge({ methods: %i(web_url) }))
+    super(opts.merge({ methods: %i(web_url process_log) }))
   end
 
   def url
