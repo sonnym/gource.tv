@@ -25,7 +25,7 @@ class Repository < ActiveRecord::Base
   end
 
   def fs_name
-    "#{@repository.account}-#{@repository.name}"
+    "#{account}-#{name}"
   end
 
   def video_path
