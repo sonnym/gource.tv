@@ -10,7 +10,7 @@ class ProcessQueue
       with_repository do
         with_video do
           response = VideoUploader.new(@repository).upload!
-          @repository.update_attribute(:youtube_id, response.unique_id)
+          @repository.update_attributes(youtube_id:, response.unique_id, processing: false)
         end
       end
     end
