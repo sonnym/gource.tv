@@ -15,12 +15,15 @@
       <accordion>
         <accordion-group>
           <accordion-heading>
-            Log
+            log
           </accordion-heading>
 
-          Start Time: {{repository.process_log.started_at}}
+          start: {{repository.process_log.started_at}}
           <br>
-          End Time: {{repository.process_log.created_at}}
+          end time: {{repository.process_log.created_at}}
+          <br>
+          duration: {{repository.process_log.duration}} seconds
+
         </accordion-group>
       </accordian>
     </div>
