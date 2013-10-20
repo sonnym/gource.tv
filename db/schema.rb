@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020051134) do
+ActiveRecord::Schema.define(version: 20131020054353) do
 
   create_table "process_logs", force: true do |t|
     t.integer  "repository_id", null: false
@@ -23,11 +23,12 @@ ActiveRecord::Schema.define(version: 20131020051134) do
   add_index "process_logs", ["repository_id"], name: "process_logs_repository_id_fk", using: :btree
 
   create_table "repositories", force: true do |t|
-    t.string   "account",    null: false
-    t.string   "name",       null: false
+    t.string   "account",                   null: false
+    t.string   "name",                      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "youtube_id"
+    t.boolean  "processing", default: true, null: false
   end
 
   add_foreign_key "process_logs", "repositories", :name => "process_logs_repository_id_fk"
