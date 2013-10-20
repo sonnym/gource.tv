@@ -57,7 +57,7 @@ function RepositoryIndexCtrl($scope, $rootScope, $modal, Repository) {
 
   function updateRepositoryList() {
     refreshRepositories();
-    setTimeout(refreshRepositories, 10000);
+    setTimeout(updateRepositoryList, 10000);
   }
 }
 RepositoryIndexCtrl.$inject = ["$scope", "$rootScope", "$modal", "Repository"];
