@@ -7,7 +7,7 @@ class Repository < ActiveRecord::Base
   after_create :process_video
 
   def as_json(opts = {})
-    super(opts.merge({ methods: %i(web_url process_log) }))
+    super(opts.merge({ methods: %i(web_url process_log youtube_processing) }))
   end
 
   def url
@@ -37,6 +37,10 @@ class Repository < ActiveRecord::Base
 
   def video_path
     File.join(REPOSITORY_DIRECTORY, "#{fs_name}.mp4")
+  end
+
+  def youtube_processing
+    VideoManager.new(self).processing?
   end
 
   private
