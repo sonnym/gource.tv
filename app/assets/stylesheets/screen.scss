@@ -47,6 +47,11 @@ label {
   margin-top: 10px;
 }
 
+#gallery img {
+  padding: 2px;
+  border: solid thin #666;
+}
+
 #repositories, #repository {
   float: left;
 }
