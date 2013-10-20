@@ -3,12 +3,13 @@
   <p>
     <input type="test" placeholder="search" ng-model="searchRaw" ng-change="setSearchString()" />
   </p>
+  <h5>15 most recent</h5>
   <span>
     <input type="checkbox" id="show_processing" ng-model="showProcessing" />
     <label for="show_processing">show processing</label>
   </span>
   <ul>
-    <li ng-repeat="repository in repositories | truthy:showProcessing | filter:{ '$': searchString } | limitTo: 50" ng-cloak>
+    <li ng-repeat="repository in repositories | truthy:showProcessing | filter:{ '$': searchString } | limitTo: 15" ng-cloak>
       <a href="#" ng-click="showRepository(repository.id)">{{repository.account}}/{{repository.name}}</a>
       <img src="images/processing.gif" alt="processing" ng-show="repository.processing" />
     </li>
