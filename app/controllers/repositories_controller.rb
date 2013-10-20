@@ -1,6 +1,6 @@
 class RepositoriesController < ApplicationController
   def index
-    render(json: Repository.all.order('updated_at DESC'))
+    render(json: Repository.all.order('updated_at DESC').as_json(only: %i(id account name)))
   end
 
   def create
@@ -14,7 +14,8 @@ class RepositoriesController < ApplicationController
   end
 
   def show
-    render(json: Repository.find(params[:id]))
+    render(json: Repository.find(params[:id]).as_json({ methods: %i(web_url process_log youtube_processing),
+                                                        only: %i(account name youtube_id) }))
   end
 
   private

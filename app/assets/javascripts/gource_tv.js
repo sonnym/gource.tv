@@ -14,7 +14,7 @@ gource_tv.filter('truthy', function(){
       var selected = [];
 
       angular.forEach(repositories, function(repository) {
-        if (!repository.processing && !repository.youtube_processing) {
+        if (!repository.processing) {
           selected.push(repository);
         }
       });

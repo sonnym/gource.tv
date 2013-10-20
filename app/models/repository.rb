@@ -6,10 +6,6 @@ class Repository < ActiveRecord::Base
 
   after_create :process_video
 
-  def as_json(opts = {})
-    super(opts.merge({ methods: %i(web_url process_log youtube_processing) }))
-  end
-
   def url
     "git://github.com/#{account}/#{name}.git"
   end
