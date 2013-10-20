@@ -39,8 +39,6 @@ class Repository < ActiveRecord::Base
     VideoManager.new(self).processing?
   end
 
-  private
-
   def process_video
     Resque.enqueue(ProcessQueue, self)
   end

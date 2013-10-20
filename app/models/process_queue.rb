@@ -11,7 +11,7 @@ class ProcessQueue
       upload!(5)
     end
 
-    Resque.enqueue(ProcessQueue, @repository) if @retry
+    @repository.process_video if @retry
   end
 
   def self.perform(repository_hash)
