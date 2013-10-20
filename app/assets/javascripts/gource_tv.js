@@ -85,6 +85,8 @@ function RepositoryCreateCtrl($scope, $rootScope, Repository) {
     Repository.create({ repository: { account: this.account, name: this.name } }, function() {
       $rootScope.$broadcast("repository:modal:close");
       $rootScope.$broadcast("repositories:refresh");
+    }, function() {
+      $rootScope.$broadcast("repository:modal:close");
     });
   }
 

@@ -1,8 +1,8 @@
 class Repository < ActiveRecord::Base
   has_one(:process_log)
 
-  validate :name, :account, presence: true, format: { with: /\A[\w-]+\z/ }
-  validate :name, uniqueness: true, scope: :account
+  validates :name, :account, presence: true, format: { with: /\A[\w-]+\z/ }
+  validates :name, uniqueness: { scope: :account }
 
   after_create :process_video
 
