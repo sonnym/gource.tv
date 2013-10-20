@@ -1,6 +1,6 @@
 class RepositoriesController < ApplicationController
   def index
-    render(json: Repository.all.order('updated_at DESC').as_json(only: %i(id account name)))
+    render(json: Repository.all.order('updated_at DESC').as_json(only: %i(id account name processing)))
   end
 
   def create
