@@ -15,7 +15,7 @@ class RepositoriesController < ApplicationController
 
   def show
     render(json: Repository.find(params[:id]).as_json({ methods: %i(web_url process_log youtube_processing),
-                                                        only: %i(account name youtube_id) }))
+                                                        only: %i(account name processing youtube_id) }))
   end
 
   private
