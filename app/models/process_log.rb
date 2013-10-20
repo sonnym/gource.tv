@@ -3,7 +3,7 @@ class ProcessLog < ActiveRecord::Base
 
   %i(started_at created_at updated_at).each do |attr|
     define_method(attr) do
-      read_attribute(:started_at).to_s('%F %T')
+      read_attribute(attr).to_s('%F %T')
     end
   end
 
