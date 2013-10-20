@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020054353) do
+ActiveRecord::Schema.define(version: 20131020055947) do
 
   create_table "process_logs", force: true do |t|
     t.integer  "repository_id", null: false
