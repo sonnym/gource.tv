@@ -7,12 +7,8 @@ class ProcessQueue
   end
 
   def process!
-    with_log do
-      with_repository do
-        with_video do
-          upload!(5)
-        end
-      end
+    with_video do
+      upload!(5)
     end
 
     Resque.enqueue(ProcessQueue, @repository) if @retry
@@ -33,19 +29,23 @@ class ProcessQueue
   end
 
   def with_repository
-    @repository.clone_from_github
+    with_log do
+      @repository.clone_from_github
 
-    yield
+      yield
 
-    @repository.remove_from_filesystem
+      @repository.remove_from_filesystem
+    end
   end
 
   def with_video
-    GourceRunner.new(@repository).run!
+    with_repository do
+      GourceRunner.new(@repository).run!
 
-    yield
+      yield
 
-    File.delete(@repository.video_path)
+      File.delete(@repository.video_path)
+    end
   end
 
   def upload!(retries)
