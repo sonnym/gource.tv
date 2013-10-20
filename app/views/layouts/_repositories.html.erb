@@ -1,0 +1,16 @@
+<div id="repositories" ng-controller="RepositoryIndexCtrl">
+  <a href="#" ng-click="showAddRepositoryForm()">add repository</a> | <a href="#" ng-click="showRandomRepository()">random</a>
+  <p>
+    <input type="test" placeholder="search" ng-model="searchRaw" ng-change="setSearchString()" />
+  </p>
+  <span>
+    <input type="checkbox" id="show_processing" ng-model="showProcessing" />
+    <label for="show_processing">show processing</label>
+  </span>
+  <ul>
+    <li ng-repeat="repository in repositories | filter:{ 'processing': showProcessing } | filter:{ '$': searchString } | limitTo: 50" ng-cloak>
+      <a href="#" ng-click="showRepository(repository.id)">{{repository.account}}/{{repository.name}}</a>
+      <img src="images/processing.gif" alt="processing" ng-show="repository.processing" />
+    </li>
+  </ul>
+</div>

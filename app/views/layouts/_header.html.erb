@@ -1,0 +1,9 @@
+<div id="header">
+  <a href="#" ng-click="goHome()"><h1>GourceTV</h1></a>
+  <div id="status" ng-controller="SystemStatusCtrl" ng-show="status">
+    load: {{status.core.load_avgs.join(' ')}} | mem: {{status.core.mem.join(' / ')}} | swap: {{status.core.swap.join(' / ')}}
+    <span ng-show="status.resque">
+      || resque | workers: {{status.resque.working}} / {{status.resque.workers}} | pending: {{status.resque.pending}} | processed: {{status.resque.processed}} | failed: {{status.resque.failed}}
+    </span>
+  </div>
+</div>
