@@ -18,7 +18,7 @@ repository.factory("Repository", ["$resource", function($resource) {
 function RepositoryIndexCtrl($scope, $rootScope, $modal, Repository) {
   var newRepositoryForm;
 
-  refreshRepositoryList();
+  updateRepositoryList();
 
   $scope.showAddRepositoryForm = function() {
     newRepositoryForm = $modal.open({
@@ -44,10 +44,15 @@ function RepositoryIndexCtrl($scope, $rootScope, $modal, Repository) {
     newRepositoryForm.close();
   });
 
-  $rootScope.$on("repositories:refresh", refreshRepositoryList);
+  $rootScope.$on("repositories:refresh", refreshRepositories);
 
-  function refreshRepositoryList() {
+  function refreshRepositories() {
     $scope.repositories = Repository.query();
+  }
+
+  function updateRepositoryList() {
+    refreshRepositories();
+    setTimeout(refreshRepositories, 10000);
   }
 }
 RepositoryIndexCtrl.$inject = ["$scope", "$rootScope", "$modal", "Repository"];
