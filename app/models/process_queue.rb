@@ -27,10 +27,7 @@ class ProcessQueue
 
     yield
 
-    log.body = File.read(@repository.log_path)
     log.save
-
-    File.delete(@repository.log_path)
   end
 
   def with_repository

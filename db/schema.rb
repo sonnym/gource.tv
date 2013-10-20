@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019161734) do
+ActiveRecord::Schema.define(version: 20131020051134) do
 
   create_table "process_logs", force: true do |t|
     t.integer  "repository_id", null: false
-    t.text     "body",          null: false
     t.datetime "started_at",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"

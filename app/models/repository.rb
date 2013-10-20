@@ -39,10 +39,6 @@ class Repository < ActiveRecord::Base
     File.join(REPOSITORY_DIRECTORY, "#{fs_name}.mp4")
   end
 
-  def log_path
-    File.join(REPOSITORY_DIRECTORY, "#{fs_name}.log")
-  end
-
   private
 
   def process_video

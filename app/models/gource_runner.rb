@@ -4,7 +4,7 @@ class GourceRunner
   end
 
   def run!
-    `cd #{@repository.path} && #{xvfb_cmd} | #{avconv_cmd} 2> #{@repository.log_path}`
+    `cd #{@repository.path} && #{xvfb_cmd} | #{avconv_cmd} 2> /dev/null`
   end
 
   private
