@@ -21,7 +21,7 @@ gem 'js-routes'
 
 group :development do
   gem 'capistrano', '~> 2.15'
-  gem 'capistrano-resque', '0.0.7'
+  gem 'capistrano-resque', git: 'git@github.com:sonnym/capistrano-resque.git', branch: 'v0.0.7-discard-log'
 end
 
 group :development, :test do
