@@ -6,6 +6,24 @@ gource_tv.run(["$rootScope", function($rootScope) {
   }
 }]);
 
+gource_tv.filter('truthy', function(){
+  return function(repositories, truthy) {
+    if (truthy) {
+      return repositories;
+    } else {
+      var selected = [];
+
+      angular.forEach(repositories, function(repository) {
+        if (!repository.processing) {
+          selected.push(repository);
+        }
+      });
+
+      return selected;
+    }
+  };
+});
+
 var repository = angular.module("repository", ["ngResource"]);
 
 repository.factory("Repository", ["$resource", function($resource) {
