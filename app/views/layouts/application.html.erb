@@ -12,7 +12,7 @@
 <body>
   <div id="container" ng-app="gource_tv">
     <div id="header">
-      <h1>GourceTV</h1>
+      <a href="#" ng-click="goHome()"><h1>GourceTV</h1></a>
       <div id="status" ng-controller="SystemStatusCtrl" ng-show="status">
         load: {{status.core.load_avgs.join(' ')}} | mem: {{status.core.mem.join(' / ')}} | swap: {{status.core.swap.join(' / ')}}
         <span ng-show="status.resque">

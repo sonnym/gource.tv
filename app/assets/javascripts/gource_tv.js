@@ -1,5 +1,11 @@
 var gource_tv = angular.module("gource_tv", ["ng", "ui.bootstrap", "repository"]);
 
+gource_tv.run(["$rootScope", function($rootScope) {
+  $rootScope.goHome = function() {
+    $rootScope.$broadcast("repository:clear");
+  }
+}]);
+
 var repository = angular.module("repository", ["ngResource"]);
 
 repository.factory("Repository", ["$resource", function($resource) {
@@ -65,6 +71,10 @@ function RepositoryShowCtrl($scope, $rootScope, Repository) {
     Repository.get({ id: id }, function(repository) {
       $scope.repository = repository;
     });
+  });
+
+  $rootScope.$on("repository:clear", function() {
+    $scope.repository = undefined;
   });
 }
 RepositoryShowCtrl.$inject = ["$scope", "$rootScope", "Repository"];
