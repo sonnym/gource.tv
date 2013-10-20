@@ -25,6 +25,11 @@ a {
   text-decoration: underline;
 }
 
+label {
+  display: inline;
+  vertical-align: text-top;
+}
+
 #container {
   width: 90%;
   height: 100%;
