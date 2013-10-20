@@ -84,7 +84,7 @@ end
 
 # Resque Workers
 role :resque_worker, LINODE_SERVER_HOSTNAME
-set :workers, { gource_tv_queue: 1 }
+set :workers, { gource_tv_queue: 2 }
 
 # Restart Passenger
 deploy.task :restart, :roles => :app do
