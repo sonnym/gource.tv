@@ -40,6 +40,11 @@ function RepositoryIndexCtrl($scope, $rootScope, $modal, Repository) {
     $rootScope.$broadcast("repository:show", id);
   }
 
+  $scope.showRandomRepository = function() {
+    var random_idx = Math.floor(Math.random() * ($scope.repositories.length - 1));
+    $scope.showRepository($scope.repositories[random_idx].id);
+  }
+
   $rootScope.$on("repository:modal:close", function() {
     newRepositoryForm.close();
   });

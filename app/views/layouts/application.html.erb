@@ -22,7 +22,9 @@
     </div>
 
     <div id="repositories" ng-controller="RepositoryIndexCtrl">
-      <a href="#" ng-click="showAddRepositoryForm()">add repository</a>
+      <a href="#" ng-click="showAddRepositoryForm()">add repository</a> 
+      |
+      <a href="#" ng-click="showRandomRepository()">random</a>
       <p>
         <input type="test" placeholder="search" ng-model="searchRaw" ng-change="setSearchString()" />
       </p>
