@@ -29,6 +29,7 @@
       <ul>
         <li ng-repeat="repository in repositories | filter:{ '$': searchString } | limitTo: 50" ng-cloak>
           <a href="#" ng-click="showRepository(repository.id)">{{repository.account}}/{{repository.name}}</a>
+          <img src="images/processing.gif" alt="processing" ng-show="repository.processing" />
         </li>
       </ul>
     </div>
