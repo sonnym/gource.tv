@@ -19,9 +19,9 @@ class VideoManager
   private
 
   def client
-    @client ||= YouTubeIt::Client.new(dev_key: YOUTUBE_KEY,
-                                      username: YOUTUBE_USERNAME,
-                                      password: YOUTUBE_PASSWORD)
+    @client ||= YouTubeIt::Client.new(dev_key: ENV['YOUTUBE_KEY'],
+                                      username: ENV['YOUTUBE_USERNAME'],
+                                      password: ENV['YOUTUBE_PASSWORD'])
   end
 
   def settings
