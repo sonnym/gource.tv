@@ -31,7 +31,7 @@ require 'bundler/capistrano'
 ##                                         ##
 #############################################
 
-GITHUB_REPOSITORY_NAME = 'r13-team-102'
+GITHUB_REPOSITORY_NAME = 'sonnym/gource.tv'
 LINODE_SERVER_HOSTNAME = '66.175.220.183'
 
 #############################################
@@ -63,7 +63,7 @@ set :admin_runner,               "www-data"
 
 # SCM Options
 set :scm,        :git
-set :repository, "git@github.com:railsrumble/#{GITHUB_REPOSITORY_NAME}.git"
+set :repository, "git@github.com:#{GITHUB_REPOSITORY_NAME}.git"
 set :branch,     "master"
 
 # Roles
