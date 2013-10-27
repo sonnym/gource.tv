@@ -74,6 +74,7 @@ role :db,  LINODE_SERVER_HOSTNAME, :primary => true
 after 'deploy:update_code' do
   # Setup Configuration
   run "cp #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  run "cp #{shared_path}/config/.env #{release_path}/.env"
 
   # Setup Shared Assets
   run "ln -s #{shared_path}/assets #{release_path}/assets"

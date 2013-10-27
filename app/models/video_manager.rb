@@ -1,8 +1,4 @@
 class VideoManager
-  YOUTUBE_USERNAME = 'GourceTV'
-  YOUTUBE_PASSWORD = 'oiJOS9f238!nxjni'
-  YOUTUBE_KEY = 'AIzaSyC_nu1u3daHzQPimuQ4c3-JHTtuzDv3Ymk'
-
   def initialize(repository)
     @repository = repository
   end

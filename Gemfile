@@ -8,6 +8,7 @@ gem 'mysql2'
 gem 'foreigner'
 
 # integration
+gem 'dotenv-rails'
 gem 'rugged'
 gem 'youtube_it'
 
