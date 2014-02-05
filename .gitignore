@@ -1,5 +1,7 @@
 .bundle
 
+.env.development
+
 log/*
 tmp/
 
