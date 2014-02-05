@@ -1,6 +1,6 @@
 .bundle
 
-log/*.log
-/tmp
+log/*
+tmp/
 
 assets/repositories
