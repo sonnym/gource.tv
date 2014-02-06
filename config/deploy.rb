@@ -32,7 +32,7 @@ require 'bundler/capistrano'
 #############################################
 
 GITHUB_REPOSITORY_NAME = 'sonnym/gource.tv'
-LINODE_SERVER_HOSTNAME = '66.175.220.183'
+LINODE_SERVER_HOSTNAME = 'gource.tv'
 
 #############################################
 #############################################
