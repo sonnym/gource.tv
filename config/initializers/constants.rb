@@ -1,1 +1,1 @@
-REPOSITORY_DIRECTORY = File.join(Rails.root, 'assets', 'repositories')
+REPOSITORY_DIRECTORY = File.join(Rails.root, 'uploads', 'repositories')

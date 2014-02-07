@@ -47,8 +47,8 @@ set :normalize_asset_timestamps, false
 set :rails_env,                  "production"
 
 set :user,                       "sonny"
-set :runner,                     "www-data"
-set :admin_runner,               "www-data"
+set :runner,                     "sonny"
+set :admin_runner,               "sonny"
 
 # Password-less Deploys (Optional)
 #
@@ -90,11 +90,11 @@ set :workers, { gource_tv_queue: 2 }
 # Restart Passenger
 deploy.task :restart, :roles => :app do
   # Fix Permissions
-  sudo "chown -R www-data:www-data #{current_path}"
-  sudo "chown -R www-data:www-data #{latest_release}"
-  sudo "chown -R www-data:www-data #{shared_path}/assets"
-  sudo "chown -R www-data:www-data #{shared_path}/bundle"
-  sudo "chown -R www-data:www-data #{shared_path}/log"
+  sudo "chown -R sonny:sonny #{current_path}"
+  sudo "chown -R sonny:sonny #{latest_release}"
+  sudo "chown -R sonny:sonny #{shared_path}/assets"
+  sudo "chown -R sonny:sonny #{shared_path}/bundle"
+  sudo "chown -R sonny:sonny #{shared_path}/log"
 
   # Restart Application
   run "touch #{current_path}/tmp/restart.txt"
