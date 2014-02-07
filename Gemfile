@@ -20,6 +20,10 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'js-routes'
 
+group :production do
+  gem 'therubyracer'
+end
+
 group :development do
   gem 'capistrano', '~> 2.15'
   gem 'capistrano-resque', git: 'git@github.com:sonnym/capistrano-resque.git', branch: 'v0.0.7-discard-log'
