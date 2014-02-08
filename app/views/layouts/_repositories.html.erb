@@ -1,4 +1,8 @@
 <div id="repositories" ng-controller="RepositoryIndexCtrl">
+  <script type="text/ng-template" id="new_repository_form.html">
+    <%= render(partial: 'layouts/create_repository') %>
+  </script>
+
   <a href="#" ng-click="showAddRepositoryForm()">add repository</a> | <a href="#" ng-click="showRandomRepository()">random</a>
   <p>
     <input type="test" placeholder="search" ng-model="searchRaw" ng-change="setSearchString()" />
