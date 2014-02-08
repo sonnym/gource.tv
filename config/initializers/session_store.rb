@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-Gourcetv::Application.config.session_store :cookie_store, key: '_gourcetv_session'
+Gourcetv::Application.config.session_store :disabled
