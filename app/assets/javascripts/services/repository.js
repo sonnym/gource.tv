@@ -13,7 +13,9 @@ gourceTV.factory("Repository", ["$resource", "$timeout", "$interval", function($
          };
 
   function updateRepositories() {
-    repositories = resources.query();
+    resources.query(function(data) {
+      repositories = data;
+    });
   }
 }]);
 
