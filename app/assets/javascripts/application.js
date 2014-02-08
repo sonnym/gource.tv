@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require js-routes
+//= require gource_tv
 //= require_tree .
