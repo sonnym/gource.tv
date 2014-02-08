@@ -12,7 +12,7 @@ gourceTV.controller("RepositoryIndexCtrl", ["$scope", "$rootScope", "$modal", "R
 
   $scope.showAddRepositoryForm = function() {
     newRepositoryForm = $modal.open({
-      templateUrl: "template/new_repository_form.html",
+      templateUrl: "new_repository_form.html",
       controller: "RepositoryCreateCtrl"
     });
   }
