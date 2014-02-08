@@ -4,7 +4,7 @@ class Repository < ActiveRecord::Base
   validates :name, :account, presence: true, format: { with: /\A[\w-]+\z/ }
   validates :name, uniqueness: { scope: :account }
 
-  after_create :process_video
+  after_create :process_video, unless: :youtube_id?
 
   def url
     "git://github.com/#{account}/#{name}.git"
