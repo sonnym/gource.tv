@@ -35,7 +35,7 @@
     </div>
 
     <div ng-show="repository.youtube_id && !(repository.processing || repository.youtube_processing)" ng-cloak>
-      <iframe type="text/html" width="640" height="360" src="http://www.youtube.com/embed/{{repository.youtube_id}}?rel=0&vq=hd720&wmode=transparent" frameborder="0"></iframe>
+      <iframe type="text/html" width="640" height="360" ng-src="{{'http://www.youtube.com/embed/' + repository.youtube_id + '?rel=0&vq=hd720&wmode=transparent'}}" frameborder="0"></iframe>
     </div>
 
     <div id="log" ng-hide="repository.processing || repository.youtube_processing">
