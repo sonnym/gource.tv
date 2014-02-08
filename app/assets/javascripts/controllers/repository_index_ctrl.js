@@ -1,7 +1,14 @@
 gourceTV.controller("RepositoryIndexCtrl", ["$scope", "$rootScope", "$modal", "Repository", function($scope, $rootScope, $modal, Repository) {
   var newRepositoryForm;
 
-  updateRepositoryList();
+  $scope.repositories = [];
+  $scope.$watch(Repository.list, function(newVal, oldVal) {
+    if (newVal === oldVal) {
+      return
+    }
+
+    $scope.repositories = newVal;
+  }, true);
 
   $scope.showAddRepositoryForm = function() {
     newRepositoryForm = $modal.open({
@@ -31,15 +38,4 @@ gourceTV.controller("RepositoryIndexCtrl", ["$scope", "$rootScope", "$modal", "R
   $rootScope.$on("repository:modal:close", function() {
     newRepositoryForm.close();
   });
-
-  $rootScope.$on("repositories:refresh", refreshRepositories);
-
-  function refreshRepositories() {
-    $scope.repositories = Repository.query();
-  }
-
-  function updateRepositoryList() {
-    refreshRepositories();
-    setTimeout(updateRepositoryList, 10000);
-  }
 }]);

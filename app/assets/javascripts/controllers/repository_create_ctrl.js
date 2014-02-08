@@ -2,7 +2,6 @@ gourceTV.controller("RepositoryCreateCtrl", ["$scope", "$rootScope", "Repository
   $scope.save = function() {
     Repository.create({ repository: { account: this.account, name: this.name } }, function() {
       $rootScope.$broadcast("repository:modal:close");
-      $rootScope.$broadcast("repositories:refresh");
     }, function() {
       $rootScope.$broadcast("repository:modal:close");
     });
