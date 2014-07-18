@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.0.0'
 gem 'pry-rails'
 
+gem 'exception_notification'
+
 # database
 gem 'mysql2'
 gem 'foreigner'
