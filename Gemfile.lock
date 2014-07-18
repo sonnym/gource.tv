@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:sonnym/capistrano-resque.git
+  remote: git://github.com/sonnym/capistrano-resque.git
   revision: f915ff92190dc4edbba8d9416fae9be3ac3b159d
   branch: v0.0.7-discard-log
   specs:
@@ -7,7 +7,7 @@ GIT
       capistrano
 
 GIT
-  remote: git@github.com:sonnym/resque.git
+  remote: git://github.com/sonnym/resque.git
   revision: 8cf986b7e43d3b4bf80705081fec985fdcd08460
   branch: remove_eager_loading
   specs:
