@@ -30,6 +30,10 @@ group :development do
   gem 'capistrano-resque', git: 'git@github.com:sonnym/capistrano-resque.git', branch: 'v0.0.7-discard-log'
 end
 
+group :test do
+  gem 'mocha', require: false
+end
+
 group :development, :test do
   gem 'pry'
 end
