@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # core
 gem 'rails', '~> 4.0.0'
+gem 'pry-rails'
 
 # database
 gem 'mysql2'
