@@ -20,22 +20,12 @@ class ProcessQueue
 
   private
 
-  def with_log
-    log = ProcessLog.new(repository: @repository, started_at: DateTime.now)
+  def with_repository
+    @repository.clone_from_github
 
     yield
 
-    log.save unless @retry
-  end
-
-  def with_repository
-    with_log do
-      @repository.clone_from_github
-
-      yield
-
-      @repository.remove_from_filesystem
-    end
+    @repository.remove_from_filesystem
   end
 
   def with_video

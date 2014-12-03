@@ -1,6 +1,4 @@
 class Repository < ActiveRecord::Base
-  has_one(:process_log)
-
   validates :name, :account, presence: true, format: { with: /\A[\w\-.]+\z/ }
   validates :name, uniqueness: { scope: :account }
 
