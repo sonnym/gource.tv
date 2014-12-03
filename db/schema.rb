@@ -31,6 +31,6 @@ ActiveRecord::Schema.define(version: 20131020055947) do
     t.boolean  "processing", default: true, null: false
   end
 
-  add_foreign_key "process_logs", "repositories", :name => "process_logs_repository_id_fk"
+  add_foreign_key "process_logs", "repositories", name: "process_logs_repository_id_fk"
 
 end
