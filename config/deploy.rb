@@ -87,6 +87,8 @@ end
 role :resque_worker, LINODE_SERVER_HOSTNAME
 set :workers, { gource_tv_queue: 2 }
 
+after 'deploy:restart', 'resque:restart'
+
 # Restart Passenger
 deploy.task :restart, :roles => :app do
   # Fix Permissions
