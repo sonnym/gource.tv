@@ -38,7 +38,7 @@ class Repository < ActiveRecord::Base
   end
 
   def process_video
-    VideoMailer.processing_start_email(self).deliver
+    RepositoryMailer.processing_start_email(self).deliver
 
     Resque.enqueue(ProcessQueue, self)
   end
