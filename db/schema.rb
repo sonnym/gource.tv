@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20141203233824) do
 
   create_table "repositories", force: true do |t|
-    t.string   "account",                   null: false
-    t.string   "name",                      null: false
+    t.string   "account",    limit: 255,                null: false
+    t.string   "name",       limit: 255,                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "youtube_id"
-    t.boolean  "processing", default: true, null: false
+    t.string   "youtube_id", limit: 255
+    t.boolean  "processing", limit: 1,   default: true, null: false
   end
 
 end
