@@ -35,4 +35,6 @@ Gourcetv::Application.configure do
   config.active_support.deprecation = :stderr
 
   config.assets.initialize_on_precompile = true
+
+  config.active_support.test_order = :random
 end
