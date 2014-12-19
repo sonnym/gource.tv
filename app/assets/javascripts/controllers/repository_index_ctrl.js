@@ -26,10 +26,6 @@ gourceTV.controller("RepositoryIndexCtrl", ["$scope", "$rootScope", "$modal", "R
   }
   $scope.setSearchString();
 
-  $scope.showRepository = function(id) {
-    $rootScope.$broadcast("repository:show", id);
-  }
-
   $scope.showRandomRepository = function() {
     var random_idx = Math.floor(Math.random() * ($scope.repositories.length - 1));
     $scope.showRepository($scope.repositories[random_idx].id);

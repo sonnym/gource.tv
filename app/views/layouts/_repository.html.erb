@@ -1,4 +1,6 @@
-<div id="repository" ng-controller="RepositoryShowCtrl">
+<div id="content" ng-view></div>
+
+<script type="text/ng-template" id="index.html">
   <div ng-hide="repository">
     <p>
       GourceTV is a service for generating visualizationss from <a href="https://github.com/" target="new">github</a> repositories.
@@ -25,8 +27,10 @@
       <%= image_tag('screenshot.png') %>
     </div>
   </div>
+</script>
 
-  <div ng-show="repository" ng-cloak>
+<script type="text/ng-template" id="repository.html">
+  <div>
     <h2>{{repository.account}}/{{repository.name}}</h2>
     <a href="{{repository.web_url}}" target="new">github</a>
 
@@ -38,4 +42,4 @@
       <iframe type="text/html" width="640" height="360" ng-src="{{'http://www.youtube.com/embed/' + repository.youtube_id + '?rel=0&vq=hd720&wmode=transparent'}}" frameborder="0"></iframe>
     </div>
   </div>
-</div>
+</script>
