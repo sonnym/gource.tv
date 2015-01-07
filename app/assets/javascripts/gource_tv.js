@@ -1,6 +1,6 @@
 var gourceTV = angular.module("gourceTV", ["ngResource", "ngRoute", "ui.bootstrap"]);
 
-gourceTV.config(["$routeProvider", "$sceDelegateProvider", function($routeProvider, $sceDelegateProvider) {
+gourceTV.config(["$routeProvider", "$sceDelegateProvider", "$locationProvider", function($routeProvider, $sceDelegateProvider, $locationProvider) {
   $routeProvider.otherwise({ templateUrl: "index.html" });
   $routeProvider.when("/repository/:id", { controller: "RepositoryShowCtrl", templateUrl: "repository.html" });
 
@@ -8,6 +8,8 @@ gourceTV.config(["$routeProvider", "$sceDelegateProvider", function($routeProvid
     "self",
     "http://www.youtube.com/embed/*?rel=0&vq=hd720&wmode=transparent"
   ]);
+
+  $locationProvider.hashPrefix("!");
 }]);
 
 gourceTV.run(["$rootScope", "$location", function($rootScope, $location) {
