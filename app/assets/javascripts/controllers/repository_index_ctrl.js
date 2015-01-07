@@ -1,4 +1,4 @@
-gourceTV.controller("RepositoryIndexCtrl", ["$scope", "$rootScope", "$modal", "Repository", function($scope, $rootScope, $modal, Repository) {
+gourceTV.controller("RepositoryIndexCtrl", ["$scope", "$rootScope", "$location", "$modal", "Repository", function($scope, $rootScope, $location, $modal, Repository) {
   var newRepositoryForm;
 
   $scope.repositories = [];
@@ -8,6 +8,8 @@ gourceTV.controller("RepositoryIndexCtrl", ["$scope", "$rootScope", "$modal", "R
     }
 
     $scope.repositories = newVal;
+
+    setRandomRepository();
   }, true);
 
   $scope.showAddRepositoryForm = function() {
@@ -26,12 +28,14 @@ gourceTV.controller("RepositoryIndexCtrl", ["$scope", "$rootScope", "$modal", "R
   }
   $scope.setSearchString();
 
-  $scope.showRandomRepository = function() {
-    var random_idx = Math.floor(Math.random() * ($scope.repositories.length - 1));
-    $scope.showRepository($scope.repositories[random_idx].id);
-  }
+  $scope.setRandomRepository = setRandomRepository
 
   $rootScope.$on("repository:modal:close", function() {
     newRepositoryForm.close();
   });
+
+  function setRandomRepository() {
+    var random_idx = Math.floor(Math.random() * ($scope.repositories.length - 1));
+    $scope.randomRepository = $scope.repositories[random_idx];
+  }
 }]);

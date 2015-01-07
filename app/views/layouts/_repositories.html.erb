@@ -3,7 +3,7 @@
     <%= render(partial: 'layouts/create_repository') %>
   </script>
 
-  <a href="#" ng-click="showAddRepositoryForm()">add repository</a> | <a href="#" ng-click="showRandomRepository()">random</a>
+  <a href="#" ng-click="showAddRepositoryForm()">add repository</a> | <a ng-click="setRandomRepository()" ng-href="#!/repository/{{ randomRepository.id }}">random</a>
   <p>
     <input type="test" placeholder="search" ng-model="searchRaw" ng-change="setSearchString()" />
   </p>
