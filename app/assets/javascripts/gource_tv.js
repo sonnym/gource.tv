@@ -11,7 +11,14 @@ gourceTV.config(["$routeProvider", "$sceDelegateProvider", function($routeProvid
 }]);
 
 gourceTV.run(["$rootScope", "$location", function($rootScope, $location) {
+  setPageSubtitle();
+
   $rootScope.goHome = function() {
     $location.path("/");
+    setPageSubtitle();
+  }
+
+  function setPageSubtitle() {
+    $rootScope.pageSubtitle = "gource visualization service";
   }
 }]);

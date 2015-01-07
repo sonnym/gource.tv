@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="gourceTV">
   <head>
-    <title>GourceTV - gource visualization service</title>
+    <title>GourceTV - {{ pageSubtitle }}</title>
 
     <%= favicon_link_tag %>
 
@@ -15,7 +15,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <div id="container" ng-app="gourceTV">
+    <div id="container">
       <%= render(partial: 'layouts/header') %>
       <%= render(partial: 'layouts/repositories') %>
       <%= render(partial: 'layouts/repository') %>
