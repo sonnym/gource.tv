@@ -9,7 +9,9 @@ gourceTV.config(["$routeProvider", "$sceDelegateProvider", "$locationProvider", 
     "http://www.youtube.com/embed/*?rel=0&vq=hd720&wmode=transparent"
   ]);
 
-  $locationProvider.hashPrefix("!");
+  $locationProvider
+    .hashPrefix("!")
+    .html5Mode({ enabled: true, requireBase: false });
 }]);
 
 gourceTV.run(["$rootScope", "$location", function($rootScope, $location) {
