@@ -26,6 +26,7 @@ gem 'sitemap_generator'
 
 group :production do
   gem 'therubyracer'
+  gem 'prerender_rails'
 end
 
 group :development do
