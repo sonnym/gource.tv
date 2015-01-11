@@ -36,7 +36,3 @@ end
 group :test do
   gem 'mocha', require: false
 end
-
-group :development, :test do
-  gem 'pry'
-end

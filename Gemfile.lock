@@ -220,7 +220,6 @@ DEPENDENCIES
   js-routes
   mocha
   mysql2
-  pry
   pry-rails
   rails (~> 4.2.0)
   resque!
