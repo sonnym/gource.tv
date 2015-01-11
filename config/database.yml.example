@@ -5,6 +5,13 @@ development:
   username: root
   timeout: 5000
 
+production:
+  adapter: mysql2
+  database: gourcetv_dev
+  encoding: utf8
+  username: root
+  timeout: 5000
+
 test:
   adapter: mysql2
   database: gourcetv_test
