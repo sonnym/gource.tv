@@ -88,6 +88,7 @@ role :resque_worker, LINODE_SERVER_HOSTNAME
 set :workers, { gource_tv_queue: 2 }
 
 after 'deploy:restart', 'resque:restart'
+after 'deploy:restart', 'refresh_sitemaps'
 
 # Restart Passenger
 deploy.task :restart, :roles => :app do
@@ -100,4 +101,8 @@ deploy.task :restart, :roles => :app do
 
   # Restart Application
   run "touch #{current_path}/tmp/restart.txt"
+end
+
+task :refresh_sitemaps do
+  run "cd #{latest_release} && RAILS_ENV=#{rails_env} bundle exec rake sitemap:refresh"
 end
