@@ -22,6 +22,7 @@ gem 'resque', github: 'sonnym/resque', branch: 'remove_eager_loading'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'js-routes'
+gem 'sitemap_generator'
 
 group :production do
   gem 'therubyracer'
