@@ -3,6 +3,6 @@ Gourcetv::Application.routes.draw do
 
   get :status, controller: :system_status, action: :index
 
-  get '/repository/:id', to: redirect('#!/repository/%{id}')
+  get '/repository/:id', to: redirect('#!/repository/%{id}'), name: :repository
   resources :repositories, only: [:create, :index, :show]
 end
