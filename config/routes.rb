@@ -3,6 +3,6 @@ Gourcetv::Application.routes.draw do
 
   get :status, controller: :system_status, action: :index
 
-  get '/repository/:id', to: 'welcome#index', name: :repository
+  get '/repository/:id', to: 'welcome#index', as: :repository
   resources :repositories, only: [:create, :index, :show]
 end
