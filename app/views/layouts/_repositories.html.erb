@@ -3,7 +3,7 @@
     <%= render(partial: 'layouts/create_repository') %>
   </script>
 
-  <a href="#" ng-click="showAddRepositoryForm()">add repository</a> | <a ng-click="setRandomRepository()" ng-href="/repository/{{ randomRepository.id }}">random</a>
+  <a href="#" ng-click="showAddRepositoryForm()">add repository</a> | <a ng-click="setRandomRepository()" ng-href="/repositories/{{ randomRepository.id }}">random</a>
   <p>
     <input type="test" placeholder="search" ng-model="searchRaw" ng-change="setSearchString()" />
   </p>
@@ -14,7 +14,7 @@
   </span>
   <ul>
     <li ng-repeat="repository in repositories | truthy:showProcessing | filter:{ '$': searchString } | limitTo: 15" ng-cloak>
-      <a href="/repository/{{repository.id}}">{{repository.account}}/{{repository.name}}</a>
+      <a href="/repositories/{{repository.id}}">{{repository.account}}/{{repository.name}}</a>
       <img src="images/processing.gif" alt="processing" ng-show="repository.processing" />
     </li>
   </ul>

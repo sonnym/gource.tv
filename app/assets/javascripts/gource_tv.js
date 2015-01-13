@@ -2,7 +2,7 @@ var gourceTV = angular.module("gourceTV", ["ngResource", "ngRoute", "ui.bootstra
 
 gourceTV.config(["$routeProvider", "$sceDelegateProvider", "$locationProvider", function($routeProvider, $sceDelegateProvider, $locationProvider) {
   $routeProvider.otherwise({ templateUrl: "index.html" });
-  $routeProvider.when("/repository/:id", { controller: "RepositoryShowCtrl", templateUrl: "repository.html" });
+  $routeProvider.when("/repositories/:id", { controller: "RepositoryShowCtrl", templateUrl: "repository.html" });
 
   $sceDelegateProvider.resourceUrlWhitelist([
     "self",

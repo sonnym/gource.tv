@@ -2,7 +2,7 @@ gourceTV.factory("Repository", ["$resource", "$timeout", "$interval", function($
   var repositories;
 
   var resources = $resource(Routes.repositories_path());
-  var resource = $resource(Routes.repository_path(":id"));
+  var resource = $resource(Routes.repository_path(":id", { format: "json" }));
 
   $timeout(updateRepositories);
   $interval(updateRepositories, 5000);

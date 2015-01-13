@@ -14,8 +14,18 @@ class RepositoriesController < ApplicationController
   end
 
   def show
-    render(json: Repository.find(params[:id]).as_json({ methods: %i(web_url youtube_processing),
-                                                        only: %i(account name processing youtube_id) }))
+    respond_to do |format|
+      format.json do
+        render(json: Repository.find(params[:id]).as_json({
+          methods: %i(web_url youtube_processing),
+          only: %i(account name processing youtube_id)
+        }))
+      end
+
+      format.html do
+        render('welcome/index')
+      end
+    end
   end
 
   private
