@@ -15,7 +15,7 @@
   <ul>
     <li ng-repeat="repository in repositories | truthy:showProcessing | filter:{ '$': searchString } | limitTo: 15" ng-cloak>
       <a href="/repositories/{{repository.id}}">{{repository.account}}/{{repository.name}}</a>
-      <img src="images/processing.gif" alt="processing" ng-show="repository.processing" />
+      <img src="/images/processing.gif" alt="processing" ng-show="repository.processing" />
     </li>
   </ul>
 </div>
