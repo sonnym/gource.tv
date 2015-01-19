@@ -89,6 +89,7 @@ set :workers, { gource_tv_queue: 2 }
 
 after 'deploy:restart', 'resque:restart'
 after 'deploy:restart', 'refresh_sitemaps'
+after 'deploy:restart', 'deploy:cleanup'
 
 # Restart Passenger
 deploy.task :restart, :roles => :app do
