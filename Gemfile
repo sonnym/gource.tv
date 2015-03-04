@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # core
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 4.2.1-rc3'
 gem 'pry-rails'
 
 gem 'exception_notification'
