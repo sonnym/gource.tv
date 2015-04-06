@@ -13,7 +13,7 @@ gem 'foreigner'
 # integration
 gem 'dotenv-rails'
 gem 'rugged'
-gem 'youtube_it'
+gem 'yt'
 
 # jobs
 gem 'resque', github: 'sonnym/resque', branch: 'remove_eager_loading'

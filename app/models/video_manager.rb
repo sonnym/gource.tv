@@ -4,7 +4,7 @@ class VideoManager
   end
 
   def upload!
-    client.video_upload(File.open(@repository.video_path), settings)
+    client.upload_video(File.open(@repository.video_path), settings)
   end
 
   def processing?
@@ -19,9 +19,7 @@ class VideoManager
   private
 
   def client
-    @client ||= YouTubeIt::Client.new(dev_key: ENV['YOUTUBE_KEY'],
-                                      username: ENV['YOUTUBE_USERNAME'],
-                                      password: ENV['YOUTUBE_PASSWORD'])
+    @client ||= Yt::Account.new(refresh_token: ENV['YOUTUBE_REFRESH_TOKEN'])
   end
 
   def settings
