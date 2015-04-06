@@ -40,16 +40,8 @@ class ProcessQueue
 
   def upload!(retries)
     begin
-      response = VideoManager.new(@repository).upload!
-      @repository.update_attributes(youtube_id: response.unique_id, processing: false)
-    rescue YouTubeIt::UploadError
-      retries -= 1
-
-      if retries > 0
-        retry
-      else
-        @retry = true
-      end
+      video = VideoManager.new(@repository).upload!
+      @repository.update_attributes(youtube_id: video.id, processing: false)
     end
   end
 end
