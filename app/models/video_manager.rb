@@ -9,8 +9,8 @@ class VideoManager
 
   def processing?
     begin
-      remote_video = client.video_by(@repository.youtube_id)
-      remote_video.present? && remote_video.state.present? && remote_video.state[:name] == 'processing'
+      remote_video = Yt::Video.new(id: @repository.youtube_id, auth: client)
+      remote_video.present? && !remote_video.processed?
     rescue
       true
     end
