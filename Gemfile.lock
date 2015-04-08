@@ -72,10 +72,10 @@ GEM
     exception_notification (4.1.0)
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
-    execjs (2.4.0)
+    execjs (2.5.0)
     foreigner (1.7.4)
       activerecord (>= 3.0.0)
-    globalid (0.3.3)
+    globalid (0.3.5)
       activesupport (>= 4.1.0)
     highline (1.7.1)
     hike (1.2.3)
@@ -174,7 +174,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    therubyracer (0.12.1)
+    therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
@@ -187,7 +187,7 @@ GEM
       json (>= 1.8.0)
     vegas (0.1.11)
       rack (>= 1.0.0)
-    yt (0.14.1)
+    yt (0.14.2)
       activesupport
 
 PLATFORMS
